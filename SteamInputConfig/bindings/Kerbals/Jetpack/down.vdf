@@ -1,0 +1,7 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'LEFT_CONTROL'}}, #Kerbals_Jetpack_down, , "
+    }
+}

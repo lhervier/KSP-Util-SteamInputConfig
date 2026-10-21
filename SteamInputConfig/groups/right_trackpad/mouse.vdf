@@ -1,0 +1,17 @@
+"ref"
+{
+    "group"
+    {
+        "mode"		"absolute_mouse"
+        {{#if (true trackpadsClick)}}
+            "inputs"
+            {
+                "#ref"              "/inputs/absolute_mouse/click/click-left.vdf"
+            }
+        {{/if}}
+        "settings"
+		{
+			"#ref"				"/settings/absolute_mouse/normal.vdf"
+		}
+    }
+}

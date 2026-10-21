@@ -1,0 +1,7 @@
+"controller_mappings"
+{
+	"title"				"KSP - Steam Controller"
+	"controller_type"	"controller_triton"
+	
+	"#ref"				"_controller_mappings.vdf"
+}

@@ -1,0 +1,83 @@
+const fs = require('fs');
+const path = require('path');
+const { getVersion } = require('./src/version-utils');
+const { saveVdfFile, loadVdfFile } = require('./src/vdf-utils');
+const { resolvePresets } = require('./src/preset-utils');
+const { resolveGroupBindings } = require('./src/group-bindings-utils');
+const { buildLayerPosMap } = require('./src/layer-bindings-utils');
+const { translateVdf } = require('./src/translate-utils');
+const { orderControllerProperties } = require('./src/controller-utils');
+
+const [controllersJsonPath, controllerName] = process.argv.slice(2);
+if (!controllersJsonPath || !controllerName) {
+    throw new Error(
+        'Usage: node merge-controller.js <path/to/controllers.json> <controllerName|all>'
+    );
+}
+
+const controllerJson = JSON.parse(fs.readFileSync(controllersJsonPath, 'utf8'));
+const controllers = controllerJson.controllers;
+const keyboards = controllerJson.keyboards;
+const configDir = path.dirname(path.resolve(controllersJsonPath));
+const buildVersion = getVersion();
+
+const controllersToBuild = controllerName === 'all'
+    ? controllers
+    : [controllers.find(controller => controller.controllerName === controllerName)];
+
+if (!controllersToBuild[0]) {
+    const knownControllers = controllers
+        .map(controller => controller.controllerName)
+        .join(', ');
+    throw new Error(`Unknown controller "${controllerName}". Known controllers: ${knownControllers}, all`);
+}
+
+const buildDir = path.join(__dirname, 'build');
+fs.rmSync(buildDir, { recursive: true, force: true });
+fs.mkdirSync(buildDir, { recursive: true });
+
+for (const controller of controllersToBuild) {
+    const rootVdfPath = controller.rootVdfPath;
+
+    for (const lang of Object.keys(keyboards)) {
+        let keyboardPath = keyboards[lang];
+        if( keyboardPath.startsWith('/') ) {
+            keyboardPath = keyboardPath.substring(1);
+        }
+        const keyboardJson = JSON.parse(fs.readFileSync(path.join(configDir, keyboardPath), 'utf8'));
+        
+        const hbContext = controller.context || {};
+        hbContext.keyboard = keyboardJson;
+
+        // Load the root controller file, resolving #ref (leading "/" is relative to this VDF's directory)
+        merged = loadVdfFile(configDir, rootVdfPath, hbContext);
+
+        // Build the preset position map so the layerPos Handlebars helper can resolve
+        // action-layer names to their hold_layer index while the groups are loaded.
+        hbContext.layerPosMap = buildLayerPosMap(merged);
+
+        // Resolve the presets and group bindings
+        resolvePresets(merged, configDir, hbContext);
+        resolveGroupBindings(merged);
+
+        // Update the Timestamp property (set in epoch milliseconds)
+        merged.controller_mappings.Timestamp = Date.now().toString();
+
+        merged = orderControllerProperties(merged);
+
+        // Translate the VDF file into all known languages
+        // The list of available languages are in the "localization" property of the vdf
+        const title = merged.controller_mappings.title;
+        
+        merged.controller_mappings.title = title + " (" + lang + "-" + buildVersion + ")";
+
+        const langDict = merged.controller_mappings.localization[lang];
+        const translatedVdf = translateVdf(merged, langDict);
+        saveVdfFile(
+            translatedVdf,
+            path.join(buildDir, rootVdfPath.replace('.vdf', '') + "_" + lang + ".vdf")
+        );
+    }
+}
+
+console.log('VDF file(s) merged and saved successfully.');

@@ -1,0 +1,13 @@
+"ref"
+{
+    "scroll_counterclockwise"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Common/Mouse/ZoomOut.vdf"
+            }
+        }
+    }
+}

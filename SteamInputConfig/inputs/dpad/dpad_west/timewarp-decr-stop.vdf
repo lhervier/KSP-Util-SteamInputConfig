@@ -1,0 +1,17 @@
+"ref"
+{
+    "dpad_west"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/General/dec-timewarp.vdf"
+            }
+            "Long_Press"
+            {
+                "#ref"				"/bindings/Game/General/stop-timewarp.vdf"
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+"ref"
+{
+    "FreeIva_backToSeat"				"Back to Seat"
+    "FreeIva_crouch"					"Crouch"
+    "FreeIva_goToEVA"					"Go to EVA"
+    "FreeIva_changeKerbal"				"Change Kerbal"
+    "FreeIva_unbuckle"					"Unbuckle (FreeIVA)"
+    
+    {{! Move }}
+    "FreeIva_Move_backward"	            "Backward"
+    "FreeIva_Move_down"					"Go Down"
+    "FreeIva_Move_forward"	            "Forward"
+    "FreeIva_Move_gotoLeft"	            "Go to Left"
+    "FreeIva_Move_gotoRight"            "Go to Right"
+    "FreeIva_Move_up"					"Go Up"   
+}

@@ -1,0 +1,17 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"hotbar"
+		"name"		"Action Groups"
+		"description"		"Action Groups"
+		"inputs"
+		{
+			"#ref"				"/inputs/hotbar/actiongroups.vdf"
+		}
+		"settings"
+		{
+			"#ref"				"/settings/hotbar/normal.vdf"
+		}
+	}
+}

@@ -1,0 +1,47 @@
+"ref"
+{
+    {{! Action }}
+    "Vessel_Action_customAction1"		    "Action personnalisée 1"
+	"Vessel_Action_customAction2"		    "Action personnalisée 2"
+	"Vessel_Action_customAction3"		    "Action personnalisée 3"
+	"Vessel_Action_customAction4"		    "Action personnalisée 4"
+	"Vessel_Action_customAction5"		    "Action personnalisée 5"
+	"Vessel_Action_customAction6"		    "Action personnalisée 6"
+	"Vessel_Action_customAction7"		    "Action personnalisée 7"
+	"Vessel_Action_customAction8"		    "Action personnalisée 8"
+	"Vessel_Action_customAction9"		    "Action personnalisée 9"
+	"Vessel_Action_customAction10"		    "Action personnalisée 10"
+
+    {{! Axis Actions }}
+    "Vessel_AxisAction_customAction1"		"Action personnalisée 1"
+	"Vessel_AxisAction_customAction2"		"Action personnalisée 2"
+	"Vessel_AxisAction_customAction3"		"Action personnalisée 3"
+	"Vessel_AxisAction_customAction4"		"Action personnalisée 4"
+	"Vessel_AxisAction_customAction5"		"Action personnalisée 5"
+	"Vessel_AxisAction_customAction6"		"Action personnalisée 6"
+	"Vessel_AxisAction_customAction7"		"Action personnalisée 7"
+	"Vessel_AxisAction_customAction8"		"Action personnalisée 8"
+	"Vessel_AxisAction_customAction9"		"Action personnalisée 9"
+	"Vessel_AxisAction_customAction10"		"Action personnalisée 10"
+
+    {{! System }}
+    "Vessel_System_brakes"				    "Freins"
+	"Vessel_System_emergencyCancel"	        "Annulation d'urgence"
+    "Vessel_System_fullThrottle"		    "Poussée maximale"
+	"Vessel_System_landingGears"		    "Trains d'atterrissage"
+	"Vessel_System_lights"				    "Eclairage"
+    "Vessel_System_nextActionGroup"	        "Ensemble d'actions suiv."
+    "Vessel_System_precisionControls"	    "Act./Désact. ctrls précis"
+    "Vessel_System_prevActionGroup"	        "Ensemble d'actions préc."
+	"Vessel_System_RCS"				        "Act./Désact. RCS"
+	"Vessel_System_SAS"				        "Act./Désact. SAS"
+	"Vessel_System_throttleCutoff"		    "Couper de la poussée"
+	
+    {{! Wheels }}
+    "Vessel_Wheels_backward"			    "Reculer"
+	"Vessel_Wheels_forward"			        "Avancer"
+    "Vessel_Wheels_turnLeft"			    "Tourner à gauche"
+	"Vessel_Wheels_turnRight"			    "Tourner à droite"
+
+    "Vessel_System_sasHold"				"SAS temporaire (inverse)"
+}

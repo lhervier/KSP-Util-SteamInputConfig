@@ -1,0 +1,7 @@
+"ref"
+{
+    {{#if (equals dpadZone "left_trackpad")}}
+        "requires_click"		"0"
+        "layout"		        "0"
+    {{/if}}
+}

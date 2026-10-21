@@ -1,0 +1,7 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'G'}}, #Vessel_System_landingGears, , "
+    }
+}

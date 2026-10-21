@@ -1,0 +1,7 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'U'}}, #Vessel_System_lights, , "
+    }
+}

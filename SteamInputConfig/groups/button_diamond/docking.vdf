@@ -1,0 +1,16 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"four_buttons"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/four_buttons/button_a/translate-rotate.vdf"
+			"#ref"				"/inputs/four_buttons/button_b/brakes.vdf"
+			"#ref"				"/inputs/four_buttons/button_x/rcs.vdf"
+			"#ref"				"/inputs/four_buttons/button_y/sas.vdf"
+		}
+	}
+}

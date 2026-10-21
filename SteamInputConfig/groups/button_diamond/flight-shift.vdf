@@ -1,0 +1,15 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"four_buttons"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/four_buttons/button_a/abort-long.vdf"
+			"#ref"				"/inputs/four_buttons/button_b/sas-hold-unbuckle.vdf"
+			"#ref"				"/inputs/four_buttons/button_y/labels.vdf"
+		}
+	}
+}

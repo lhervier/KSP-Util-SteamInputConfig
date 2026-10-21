@@ -1,0 +1,16 @@
+"ref"
+{
+    "FreeIva_backToSeat"				"S'assoir dans le siège"
+    "FreeIva_crouch"					"S'accroupir"
+    "FreeIva_goToEVA"					"Partir en EVA"
+    "FreeIva_changeKerbal"				"Changer de Kerbal"
+    "FreeIva_unbuckle"					"Détacher (FreeIVA)"
+    
+    {{! Move }}
+    "FreeIva_Move_backward"	            "Arrière"
+    "FreeIva_Move_down"					"Descendre"
+    "FreeIva_Move_forward"	            "Avant"
+    "FreeIva_Move_gotoLeft"	            "Aller à gauche"
+    "FreeIva_Move_gotoRight"            "Aller à droite"
+    "FreeIva_Move_up"					"Monter"
+}

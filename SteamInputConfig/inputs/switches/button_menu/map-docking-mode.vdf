@@ -1,0 +1,17 @@
+"ref"
+{
+    "button_menu"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/General/show-map.vdf"
+            }
+            "Long_Press"
+            {
+                "#ref"				"/bindings/Flight/Other/translation-mode.vdf"
+            }
+        }
+    }
+}

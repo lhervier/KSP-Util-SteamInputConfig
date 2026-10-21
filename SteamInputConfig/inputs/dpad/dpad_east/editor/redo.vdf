@@ -1,0 +1,17 @@
+"ref"
+{
+    "dpad_east"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/Editor/redo1.vdf"
+            }
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/Editor/redo2.vdf"
+            }
+        }
+    }
+}

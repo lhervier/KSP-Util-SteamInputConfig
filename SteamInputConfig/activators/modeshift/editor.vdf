@@ -1,0 +1,18 @@
+"ref"
+{
+    "activators"
+    {
+        "Full_Press"
+        {
+            "#ref"                  "/bindings/modeshift.vdf?zone=joystick"
+        }
+        "Full_Press"
+        {
+            "#ref"                  "/bindings/modeshift.vdf?zone=button_diamond"
+        }
+        "Full_Press"
+        {
+            "#ref"                  "/bindings/modeshift.vdf?zone=left_trackpad"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'BACKSLASH'}}, #Game_Camera_mouseView, , "
+    }
+}

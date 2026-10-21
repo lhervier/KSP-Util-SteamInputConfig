@@ -1,0 +1,13 @@
+"ref"
+{
+    "button_escape"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/General/pause.vdf"
+            }
+        }
+    }
+}

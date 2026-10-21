@@ -1,0 +1,15 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"switches"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/switches/button_back_right/modeshift.vdf?preset=menu"
+			"#ref"				"/inputs/switches/button_back_left/mod-key.vdf"
+			"#ref"				"/inputs/switches/button_escape/pause.vdf"
+		}
+	}
+}

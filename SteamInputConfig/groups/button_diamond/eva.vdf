@@ -1,0 +1,16 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"four_buttons"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/four_buttons/button_a/jump.vdf"
+			"#ref"				"/inputs/four_buttons/button_b/grab.vdf"
+			"#ref"				"/inputs/four_buttons/button_x/jetpack.vdf"
+			"#ref"				"/inputs/four_buttons/button_y/sas.vdf"
+		}
+	}
+}

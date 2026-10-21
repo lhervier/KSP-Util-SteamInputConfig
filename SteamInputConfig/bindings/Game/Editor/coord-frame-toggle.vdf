@@ -1,0 +1,13 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'F'}}, #Game_Editor_coordFrameToggle, , "
+    }
+    {{#if (true haptic)}}
+        "settings"
+        {
+            "haptic_intensity"		"3"
+        }
+    {{/if}}
+}

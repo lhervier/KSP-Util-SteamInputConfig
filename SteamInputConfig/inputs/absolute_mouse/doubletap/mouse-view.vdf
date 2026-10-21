@@ -1,0 +1,13 @@
+"ref"
+{
+    "doubletap"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/Camera/mouse-view.vdf"
+            }
+        }
+    }
+}

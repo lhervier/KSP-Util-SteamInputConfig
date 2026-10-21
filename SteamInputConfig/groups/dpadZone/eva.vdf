@@ -1,0 +1,19 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"dpad"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/dpad/dpad_west/timewarp-decr-stop.vdf"
+			"#ref"				"/inputs/dpad/dpad_east/timewarp-incr.vdf"
+			"#ref"				"/inputs/dpad/dpad_north/eva-lights.vdf"
+		}
+		"settings"
+		{
+			"#ref"				"/settings/dpad/noclick.vdf"
+		}
+	}
+}

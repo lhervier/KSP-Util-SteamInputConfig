@@ -1,0 +1,18 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"switches"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/switches/button_back_right/modeshift.vdf?preset=editor"
+			"#ref"				"/inputs/switches/button_back_left/mod-key.vdf"
+			"#ref"				"/inputs/switches/button_escape/pause.vdf"
+			"#ref"				"/inputs/switches/left_bumper/roll-part-left.vdf"
+			"#ref"				"/inputs/switches/right_bumper/roll-part-right.vdf"
+			"#ref"				"/inputs/switches/button_back_right_upper/editor-shift.vdf"
+		}
+	}
+}

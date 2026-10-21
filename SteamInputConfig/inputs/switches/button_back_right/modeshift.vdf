@@ -1,0 +1,7 @@
+"ref"
+{
+    "{{button_back_right}}"
+    {
+        "#ref"          "/activators/modeshift/{{preset}}.vdf"
+    }
+}

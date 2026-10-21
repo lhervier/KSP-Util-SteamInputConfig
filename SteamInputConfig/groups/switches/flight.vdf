@@ -1,0 +1,20 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"switches"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/switches/button_back_right/modeshift.vdf?preset=flight"
+			"#ref"				"/inputs/switches/button_back_left/mod-key.vdf"
+			"#ref"				"/inputs/switches/button_escape/pause.vdf"
+			"#ref"				"/inputs/switches/button_menu/map-docking-mode.vdf"
+			"#ref"				"/inputs/switches/left_bumper/roll-left.vdf"
+			"#ref"				"/inputs/switches/right_bumper/roll-right.vdf"
+			"#ref"				"/inputs/switches/button_back_right_upper/throttle-up.vdf"
+			"#ref"				"/inputs/switches/button_back_left_upper/throttle-down.vdf"
+		}
+	}
+}

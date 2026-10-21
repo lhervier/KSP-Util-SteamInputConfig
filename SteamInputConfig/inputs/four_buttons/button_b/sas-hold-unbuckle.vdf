@@ -1,0 +1,17 @@
+"ref"
+{
+    "button_b"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Vessel/System/sas-hold.vdf"
+            }
+            "Long_Press"
+            {
+                "#ref"				"/bindings/FreeIva/unbuckle.vdf"
+            }
+        }
+    }
+}

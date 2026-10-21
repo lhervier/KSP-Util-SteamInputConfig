@@ -1,0 +1,19 @@
+"ref"
+{
+	"Set_Menu"					"Menu"
+    "Set_TrackingStation"		"Tracking Station"
+    "Set_Editor"				"Editor"
+    "Set_Flight"				"Flight"
+    "Set_MapFlight"				"Map (Flight)"
+    "Set_Docking"				"Docking"
+    "Set_MapDocking"			"Map (Docking)"
+    "Set_Eva"					"EVA"
+    "Set_MapEva"				"Map (EVA)"
+    "Set_EvaConstructionMode"	"EVA Constr. Mode"
+    "Set_Iva"					"IVA"
+    "Set_FreeIva"				"Free IVA"
+    "Set_MissionBuilder"		"Mission Builder"
+
+    "Set_Map"				"Map"
+    "Set_EVA"				"EVA"
+}

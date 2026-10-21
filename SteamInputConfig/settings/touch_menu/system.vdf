@@ -1,0 +1,11 @@
+"ref"
+{
+    "touch_menu_button_count"		"12"
+    "touch_menu_opacity"		    "69"
+    "touch_menu_position_x"		    "4"
+    "touch_menu_position_y"		    "19"
+    "mouse_smoothing"		        "0"
+    {{#if (true haptic)}}
+        "haptic_intensity"		    "3"
+    {{/if}}
+}

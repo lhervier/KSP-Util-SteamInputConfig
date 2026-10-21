@@ -1,0 +1,13 @@
+"ref"
+{
+    "right_bumper"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Flight/Rotate/roll-right.vdf"
+            }
+        }
+    }
+}

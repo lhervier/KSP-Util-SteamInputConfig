@@ -1,0 +1,20 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"switches"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/switches/button_back_right/modeshift.vdf?preset=eva"
+			"#ref"				"/inputs/switches/button_back_left/mod-key.vdf"
+			"#ref"				"/inputs/switches/button_escape/pause.vdf"
+			"#ref"				"/inputs/switches/button_menu/map-construction-mode.vdf"
+			"#ref"				"/inputs/switches/left_bumper/turn-left.vdf"
+			"#ref"				"/inputs/switches/right_bumper/turn-right.vdf"
+			"#ref"				"/inputs/switches/button_back_right_upper/eva-up.vdf"
+			"#ref"				"/inputs/switches/button_back_left_upper/eva-down.vdf"
+		}
+	}
+}

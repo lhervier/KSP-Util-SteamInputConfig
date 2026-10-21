@@ -1,0 +1,18 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"dpad"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/dpad/dpad_west/prev-vessel.vdf"
+			"#ref"				"/inputs/dpad/dpad_east/next-vessel.vdf"
+		}
+		"settings"
+		{
+			"#ref"				"/settings/dpad/noclick.vdf"
+		}
+	}
+}

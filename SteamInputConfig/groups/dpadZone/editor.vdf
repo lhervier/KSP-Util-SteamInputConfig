@@ -1,0 +1,20 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"dpad"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/dpad/dpad_west/editor/undo.vdf"
+			"#ref"				"/inputs/dpad/dpad_east/editor/redo.vdf"
+			"#ref"				"/inputs/dpad/dpad_north/editor/camera-up.vdf"
+			"#ref"				"/inputs/dpad/dpad_south/editor/camera-down.vdf"
+		}
+		"settings"
+		{
+			"#ref"				"/settings/dpad/noclick.vdf"
+		}
+	}
+}

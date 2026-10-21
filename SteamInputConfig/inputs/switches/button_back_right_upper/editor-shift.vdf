@@ -1,0 +1,13 @@
+"ref"
+{
+    "button_back_right_upper"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/Editor/camera-slew.vdf"
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"dpad"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/dpad/dpad_east/eva-move-right.vdf"
+			"#ref"				"/inputs/dpad/dpad_north/eva-move-forward.vdf"
+			"#ref"				"/inputs/dpad/dpad_south/eva-move-backward.vdf"
+			"#ref"				"/inputs/dpad/dpad_west/eva-move-left.vdf"
+		}
+	}
+}

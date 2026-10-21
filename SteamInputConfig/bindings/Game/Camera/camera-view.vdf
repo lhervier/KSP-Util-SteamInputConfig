@@ -1,0 +1,8 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'C'}}, #Game_Camera_cameraView, , "
+        
+    }
+}

@@ -1,0 +1,9 @@
+"ref"
+{
+    "#ref"				"MenuControls.vdf"
+    "#ref"				"FlightControls.vdf"
+    "#ref"				"DockingControls.vdf"
+    "#ref"				"EditorControls.vdf"
+    "#ref"				"MapControls.vdf"
+    "#ref"				"EVAControls.vdf"
+}

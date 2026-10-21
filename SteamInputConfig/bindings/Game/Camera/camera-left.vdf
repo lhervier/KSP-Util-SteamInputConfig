@@ -1,0 +1,7 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'LEFT_ARROW'}}, #Game_Camera_cameraLeft, , "
+    }
+}

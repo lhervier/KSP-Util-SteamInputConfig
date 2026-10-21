@@ -1,0 +1,19 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"scrollwheel"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/scrollwheel/scroll_clockwise/zoom-in.vdf"
+			"#ref"				"/inputs/scrollwheel/scroll_counterclockwise/zoom-out.vdf"
+			"#ref"				"/inputs/scrollwheel/click/click-right.vdf"
+		}
+		"settings"
+		{
+			"#ref"				"/settings/scrollwheel/normal.vdf"
+		}
+	}
+}

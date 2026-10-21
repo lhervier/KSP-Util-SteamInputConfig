@@ -1,0 +1,17 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"touch_menu"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/touch_menu/system.vdf"
+		}
+		"settings"
+		{
+			"#ref"				"/settings/touch_menu/system.vdf"
+		}
+	}
+}

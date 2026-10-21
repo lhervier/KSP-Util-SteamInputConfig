@@ -1,0 +1,23 @@
+{
+  "keyboards": {
+    "french": "/keyboard-french.json",
+    "english": "/keyboard-english.json"
+  },
+  "controllers": [
+    {
+      "controllerName": "steamcontroller_v2",
+      "rootVdfPath": "/ksp_steaminput_steamcontroller_v2.vdf",
+      "context": {
+        "haptic": true,
+        "button_back_right": "button_back_right",
+        "button_back_left": "button_back_left",
+        "triggersClick": false,
+        "trackpadsClick": true,
+        "mouseZone": "right_trackpad",
+        "altMouseZone": "none",
+        "dpadZone": "dpad",
+        "chordBackRight": "4"
+      }
+    }
+  ]
+}

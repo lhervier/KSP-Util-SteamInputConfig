@@ -1,0 +1,7 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'F'}}, #Kerbals_CharacterControls_grab, , "
+    }
+}

@@ -1,0 +1,21 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"dpad"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/dpad/dpad_east/translate-right.vdf"
+			"#ref"				"/inputs/dpad/dpad_north/translate-down.vdf"
+			"#ref"				"/inputs/dpad/dpad_south/translate-up.vdf"
+			"#ref"				"/inputs/dpad/dpad_west/translate-left.vdf"
+			"#ref"				"/inputs/dpad/click/precision.vdf"
+		}
+		"settings"
+		{
+			"#ref"				"/settings/dpad/analog.vdf"
+		}
+	}
+}

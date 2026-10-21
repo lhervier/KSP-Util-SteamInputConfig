@@ -1,0 +1,21 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"dpad"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/dpad/dpad_east/yaw-right.vdf"
+			"#ref"				"/inputs/dpad/dpad_north/pitch-up.vdf"
+			"#ref"				"/inputs/dpad/dpad_south/pitch-down.vdf"
+			"#ref"				"/inputs/dpad/dpad_west/yaw-left.vdf"
+			"#ref"				"/inputs/dpad/click/precision.vdf"
+		}
+		"settings"
+		{
+			"#ref"				"/settings/dpad/analog.vdf"
+		}
+	}
+}

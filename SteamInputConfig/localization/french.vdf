@@ -1,0 +1,14 @@
+"ref"
+{
+    "french"
+    {
+        "#ref"				"french/Common.vdf"
+        "#ref"				"french/Flight.vdf"
+        "#ref"				"french/FreeIva.vdf"
+        "#ref"				"french/Game.vdf"
+        "#ref"				"french/Kerbals.vdf"
+        "#ref"				"french/Set.vdf"
+        "#ref"				"french/SettingsController.vdf"
+        "#ref"				"french/Vessel.vdf"
+    }
+}

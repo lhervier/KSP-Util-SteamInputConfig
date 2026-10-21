@@ -1,0 +1,22 @@
+"ref"
+{
+    "preset"
+	{
+		"name"		"EditorControls"
+		"group_source_bindings"
+		{
+			"/groups/right_joystick/camera.vdf"		"right_joystick active"
+			"/groups/right_trackpad/mouse.vdf"		"right_trackpad active"
+			"/groups/joystick/editor/rotate-part.vdf"		"joystick active"
+			"/groups/joystick/editor/place-offset-rotate-root.vdf"		"joystick active modeshift"
+			"/groups/left_trackpad/scroll-zoom.vdf"		"left_trackpad active"
+			"/groups/left_trackpad/system-menu.vdf"		"left_trackpad active modeshift"
+			"/groups/dpadZone/editor.vdf"		"{{dpadZone}} active"
+			"/groups/button_diamond/editor/reset_rot-delete-sym_cycle-snap.vdf"		"button_diamond active"
+			"/groups/button_diamond/editor/sym-frame.vdf"		"button_diamond active modeshift"
+			"/groups/left_trigger/right-click.vdf"		"left_trigger active"
+			"/groups/right_trigger/left-click.vdf"		"right_trigger active"
+			"/groups/switches/editor.vdf"		"switch active"
+		}
+	}
+}

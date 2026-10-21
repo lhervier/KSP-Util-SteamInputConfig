@@ -1,0 +1,13 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'X'}}, #Vessel_System_throttleCutoff, , "
+    }
+    {{#if (true haptic)}}
+        "settings"
+        {
+            "haptic_intensity"		"2"
+        }
+    {{/if}}
+}

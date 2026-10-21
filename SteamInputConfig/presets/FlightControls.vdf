@@ -1,0 +1,24 @@
+"ref"
+{
+    "preset"
+	{
+		"name"		"FlightControls"
+		"group_source_bindings"
+		{
+			"/groups/right_joystick/camera-flight.vdf"		"right_joystick active"
+			"/groups/right_joystick/rcs-translate.vdf"		"right_joystick active modeshift"
+			"/groups/right_trackpad/mouse-flight.vdf"		"right_trackpad active"
+			"/groups/joystick/flight.vdf"		"joystick active"
+			"/groups/joystick/actiongroups.vdf"		"joystick active modeshift"
+			"/groups/left_trackpad/scroll-zoom.vdf"		"left_trackpad active"
+			"/groups/left_trackpad/system-menu.vdf"		"left_trackpad active modeshift"
+			"/groups/dpadZone/flight.vdf"		"{{dpadZone}} active"
+			"/groups/dpadZone/flight-shift.vdf"		"{{dpadZone}} active modeshift"
+			"/groups/button_diamond/flight.vdf"		"button_diamond active"
+			"/groups/button_diamond/flight-shift.vdf"		"button_diamond active modeshift"
+			"/groups/left_trigger/right-click.vdf"		"left_trigger active"
+			"/groups/right_trigger/left-click.vdf"		"right_trigger active"
+			"/groups/switches/flight.vdf"		"switch active"
+		}
+	}
+}

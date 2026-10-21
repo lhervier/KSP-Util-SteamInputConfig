@@ -1,0 +1,17 @@
+"ref"
+{
+    "dpad_west"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/Editor/undo1.vdf"
+            }
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/Editor/undo2.vdf"
+            }
+        }
+    }
+}

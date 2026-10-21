@@ -1,0 +1,17 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"trigger"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/trigger/edge/left-click.vdf"
+		}
+		"settings"
+		{
+			"#ref"				"/settings/triggers/normal.vdf"
+		}
+	}
+}

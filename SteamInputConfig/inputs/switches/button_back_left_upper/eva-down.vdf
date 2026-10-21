@@ -1,0 +1,13 @@
+"ref"
+{
+    "button_back_left_upper"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Kerbals/Jetpack/down.vdf"
+            }
+        }
+    }
+}

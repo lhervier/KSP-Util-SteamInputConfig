@@ -1,0 +1,23 @@
+"ref"
+{
+    "button_back_left_upper"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Flight/Translate/translate-backward.vdf"
+            }
+            {{#if (defined chordBackRight)}}
+            "chord"
+            {
+                "#ref"				"/bindings/Vessel/System/throttle-cutoff.vdf"
+                "settings"
+                {
+                    "chord_button"		"{{chordBackRight}}"
+                }
+            }
+            {{/if}}
+        }
+    }
+}

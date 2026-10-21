@@ -1,0 +1,14 @@
+"ref"
+{
+    "actions"
+    {
+        {{! The six action sets of Squad's plugin (KSPSteamCtrlr.dll), served by Steam without any
+            controller_config file. The names are a contract with the game: do not change them. }}
+        "#ref"				"action.vdf?name=Menu"
+        "#ref"				"action.vdf?name=Flight"
+        "#ref"				"action.vdf?name=Docking"
+        "#ref"				"action.vdf?name=Editor"
+        "#ref"				"action.vdf?name=Map"
+        "#ref"				"action.vdf?name=EVA"
+    }
+}

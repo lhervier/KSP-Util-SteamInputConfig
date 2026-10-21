@@ -1,0 +1,8 @@
+"ref"
+{
+    {{! Analog emulation, taken from Squad's configuration: a stick half tilted sends the key in pulses,
+        which gives a proportional control without any joystick axis to bind in KSP. }}
+    "requires_click"		            "0"
+    "analog_emulation_period"		    "54"
+    "analog_emulation_duty_cycle_pct"	"7"
+}

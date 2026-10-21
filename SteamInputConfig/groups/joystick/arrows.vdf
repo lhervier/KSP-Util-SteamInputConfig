@@ -1,0 +1,16 @@
+"ref"
+{
+    "group"
+	{
+		"mode"		"dpad"
+		"name"		""
+		"description"		""
+		"inputs"
+		{
+			"#ref"				"/inputs/dpad/dpad_east/arrow-right.vdf"
+			"#ref"				"/inputs/dpad/dpad_north/arrow-up.vdf"
+			"#ref"				"/inputs/dpad/dpad_south/arrow-down.vdf"
+			"#ref"				"/inputs/dpad/dpad_west/arrow-left.vdf"
+		}
+	}
+}

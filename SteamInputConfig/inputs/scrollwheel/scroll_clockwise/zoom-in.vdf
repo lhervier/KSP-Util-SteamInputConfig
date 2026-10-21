@@ -1,0 +1,13 @@
+"ref"
+{
+    "scroll_clockwise"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Common/Mouse/ZoomIn.vdf"
+            }
+        }
+    }
+}

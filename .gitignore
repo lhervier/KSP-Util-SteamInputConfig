@@ -1,0 +1,4 @@
+node_modules/
+MergeScripts/build/
+Release/
+.claude/

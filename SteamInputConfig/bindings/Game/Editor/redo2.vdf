@@ -1,0 +1,7 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'Y'}}, #Game_Editor_redo, , "
+    }
+}

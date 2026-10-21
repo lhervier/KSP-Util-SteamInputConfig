@@ -1,0 +1,7 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key 'KEYPAD_PERIOD'}}, #Game_UI_showNavsphere, , "
+    }
+}

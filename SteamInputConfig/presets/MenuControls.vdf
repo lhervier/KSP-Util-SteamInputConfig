@@ -1,0 +1,19 @@
+"ref"
+{
+    "preset"
+	{
+		"name"		"MenuControls"
+		"group_source_bindings"
+		{
+			"/groups/right_trackpad/mouse.vdf"		"right_trackpad active"
+			"/groups/joystick/arrows.vdf"		"joystick active"
+			"/groups/left_trackpad/scroll-zoom.vdf"		"left_trackpad active"
+			"/groups/left_trackpad/system-menu.vdf"		"left_trackpad active modeshift"
+			"/groups/dpadZone/menu.vdf"		"{{dpadZone}} active"
+			"/groups/button_diamond/accept-cancel.vdf"		"button_diamond active"
+			"/groups/left_trigger/right-click.vdf"		"left_trigger active"
+			"/groups/right_trigger/left-click.vdf"		"right_trigger active"
+			"/groups/switches/menu.vdf"		"switch active"
+		}
+	}
+}

@@ -1,0 +1,7 @@
+"ref"
+{
+    "bindings"
+    {
+        "binding"		"key_press {{key '0'}}, #Vessel_Action_customAction10, , "
+    }
+}
