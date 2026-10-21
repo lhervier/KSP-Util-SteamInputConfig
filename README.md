@@ -25,8 +25,9 @@ binding is a plain key press, listed in the fragments under `SteamInputConfig/`.
 
 To try a layout built from this repository instead, copy
 `Release/ksp_steaminput_steamcontroller_v2_<language>.vdf` into
-`<Steam>/steamapps/common/Steam Controller Configs/<your Steam id>/config/220200/` while Steam is closed;
-it then shows up under **Your layouts**.
+`<Steam>/steamapps/common/Steam Controller Configs/<your Steam id>/config/220200/`, and add to its name a
+number higher than the last one already there (`..._french_11.vdf` after `..._french_10.vdf`). Steam
+picks it up without being restarted; it shows up under **Your layouts**.
 
 The language is the one of your keyboard layout (`english` for QWERTY, `french` for AZERTY): the
 bindings send keys, and the keys KSP expects sit at different places on each keyboard.
