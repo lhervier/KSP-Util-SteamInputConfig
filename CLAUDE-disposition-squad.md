@@ -263,13 +263,19 @@ du pad gauche est perdu.
 Touch menu système (R-bas + pad gauche) : F1 capture, F2 interface, F3 journal, F5 sauvegarde
 rapide, F9 chargement rapide, F10 jauges de température, F11 surcouche thermique, F12 forces
 aérodynamiques (avec L-bas : console), navball (pavé `.`), recentrer la caméra (`` ` ``), Inser
-(mode étages).
+(afficher/masquer la pile d'étages).
+
+**Suppr et Inser** (`FlightUIModeController.OnDockingPress` / `OnStagingPress`, lu le 2026-10-22, et
+vu en jeu par Lionel) : Suppr (`UIMODE_DOCKING`) **bascule** entre amarrage et étages ; Inser
+(`UIMODE_STAGING`) ne ramène au mode étages que depuis la carte, et sinon affiche/masque la pile
+d'étages (`StageManager.ToggleStageStack`). D'où ⧉ long = Suppr en Vol **et** en Amarrage.
 
 ## Les différences par set
 
 - **Amarrage** (`DockingControls`) : stick gauche = translation (mêmes touches W/A/S/D), palettes
   hautes = translation avant/arrière (mêmes touches Maj/Ctrl), A = Espace bascule
-  translation/rotation (plus d'Abort sous A), ⧉ long = Inser (retour au mode étages).
+  translation/rotation (plus d'Abort sous A), ⧉ long = Suppr comme en vol (retour au mode étages ;
+  Inser n'y ramène pas, cf. « Le squelette commun »).
 - **Carte** (`MapControls`, aussi station de suivi et carte depuis l'AEV) : LB / RB gardent Q / E
   (roulis) comme en vol ; **clic du stick droit = Tab** (focus suivant : le stick caméra change
   l'objet que vise la caméra ; V, mode caméra, ne sert pas en carte). Pas de Maj+Tab : KSP y voit

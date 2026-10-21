@@ -25,7 +25,7 @@
 	"Flight_Translate_translateRight"		"Translate Right"
 	"Flight_Translate_translateUp"			"Translate Up"
 
-    "Flight_Other_stagingMode"				"Staging Mode"
+    "Flight_Other_stageStack"				"Show/Hide Stage Stack"
     "Flight_Translate_rcsDown"				"RCS Down"
     "Flight_Translate_rcsUp"				"RCS Up"
     "Flight_Translate_rcsLeft"				"RCS Left"

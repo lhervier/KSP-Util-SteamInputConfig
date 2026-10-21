@@ -116,7 +116,7 @@
         {
             "Full_Press"
             {
-                "#ref"				"/bindings/Flight/Other/staging-mode.vdf"
+                "#ref"				"/bindings/Flight/Other/stage-stack.vdf"
             }
         }
     }

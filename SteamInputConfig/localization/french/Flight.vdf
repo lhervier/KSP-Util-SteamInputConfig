@@ -25,7 +25,7 @@
     "Flight_Translate_translateRight"			"Translater vers la droite"
     "Flight_Translate_translateUp"				"Translater vers le haut"
 
-    "Flight_Other_stagingMode"				"Mode étages"
+    "Flight_Other_stageStack"				"Afficher/masquer les étages"
     "Flight_Translate_rcsDown"				"RCS bas"
     "Flight_Translate_rcsUp"				"RCS haut"
     "Flight_Translate_rcsLeft"				"RCS gauche"
