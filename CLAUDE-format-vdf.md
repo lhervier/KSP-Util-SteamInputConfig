@@ -123,7 +123,8 @@ combinaison de l'interface Steam (localisation `ControllerBinding_Chord_ChordBut
 où l'interface montre **A** pour `10` ; l'interface distingue `LeftGrip` (palette basse) de
 `LeftGrip_Upper` (palette haute), et seules les basses sont dans la liste. Une configuration
 communautaire de KSP pour le v1 utilisait `3`, le grip gauche, bouton de shift de la config Squad.
-`3` affiche bien **L5** et `4` **R5** sur le v2 (même test, 2026-10-22). Les palettes hautes ne peuvent pas être le
+`3` affiche bien **L5** et `4` **R5** sur le v2 (même test, 2026-10-22), et plein gaz / coupure par
+R5 + palette haute marchent en jeu (Lionel, 2026-10-22). Les palettes hautes ne peuvent pas être le
 bouton à tenir.
 
 L'interface propose aussi « Interruptible » (actif par défaut sur une combinaison) : un activateur

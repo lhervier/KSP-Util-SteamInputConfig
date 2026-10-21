@@ -251,8 +251,9 @@ zéro sans couper les gaz** : pas besoin d'une entrée dédiée. Lu dans `FixedU
 perdre à fréquence d'images élevée (déduit du code, pas mesuré).
 
 Plein gaz / coupure = R-bas + R-haut / L-haut (Lionel, 2026-10-21) : les gâchettes restent des clics
-dans toutes les couches. Les palettes sont dans la zone `switch` : il faut un mode shift de cette
-zone, ou un appui accordé (chord) sur R-bas, à vérifier.
+dans toutes les couches. Les palettes étant dans la zone `switch`, que le mode shift de R-bas ne peut
+pas changer, c'est un **appui combiné** (`chord`, `chord_button` = 4 = R5) sur chaque palette haute :
+vérifié en jeu (Lionel, 2026-10-22).
 
 **Le pad droit (la souris) ne change jamais avec R-bas** (Lionel, 2026-10-21) : on tient souvent
 R-bas, prêt à couper les gaz, tout en déplaçant la caméra à la souris ; le stick droit la déplace par
@@ -307,6 +308,11 @@ aérodynamiques (avec L-bas : console), navball (pavé `.`), recentrer la camér
 
 ## À vérifier en jeu
 
+- **Alt bloqué, vu une fois** (2026-10-22) : la molette changeait le FOV (KSP : Alt + molette = FOV,
+  persistant), débloqué en rappuyant sur R5. Pas reproduit (L5/R5 tenues et relâchées dans tous les
+  ordres). Peut venir de Windows : une fenêtre qui perd le focus pendant qu'Alt est tenu ne reçoit pas
+  son relâchement, et le jeu croit la touche enfoncée jusqu'au prochain appui. Si ça revient, noter ce
+  qui précédait (Alt+Tab, raccourci Steam, palette L5).
 - Sans `controller_config\game_actions_220200.vdf`, Steam sert bien les 6 sets Squad pour le v2
   (renommer le fichier, relancer Steam : l'interface doit montrer Menu, Vol, Amarrage, Éditeur,
   Carte, AEV). Touche à l'install Steam de Lionel : à lui de le faire.
