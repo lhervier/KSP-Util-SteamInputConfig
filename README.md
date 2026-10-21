@@ -33,7 +33,12 @@ bindings send keys, and the keys KSP expects sit at different places on each key
 
 ## The layout
 
-The back paddles carry the keyboard modifiers:
+**[See the layout, input by input and set by set](https://claude.ai/artifact/Ujeyfu9dcMrKzdZHCv54g6)**:
+an interactive drawing of the controller showing what each input does on a press, a long press and with
+the R5 paddle held. The same page in French, the working copy with the points still being checked, is
+[here](https://claude.ai/artifact/LinLom7CUPZ83rWt8NwNnW).
+
+In short, the back paddles carry the keyboard modifiers:
 
 - **upper right / upper left**: Shift / Ctrl, so throttle up / down in flight, translation forward /
   backward in docking mode, jetpack up / down in EVA;

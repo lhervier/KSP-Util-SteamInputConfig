@@ -11,6 +11,11 @@ se répète en plusieurs endroits s'y change une fois, et chaque modification se
 - `MergeScripts\` : l'outil qui les fusionne (`merge-controller.js`, node).
 - `build.bat` / `build.sh` : `npm ci`, fusion, copie dans `Release\` d'un `.vdf` par langue de clavier.
 
+La disposition est montrée par deux pages (artefacts claude.ai, publiques) : en anglais pour le README
+(<https://claude.ai/artifact/Ujeyfu9dcMrKzdZHCv54g6>, sans les points de travail) et en français, la
+copie de travail avec « À vérifier en jeu » (<https://claude.ai/artifact/LinLom7CUPZ83rWt8NwNnW>).
+**Toute modification de la disposition se reporte dans les deux.**
+
 Le `.vdf` se diffuse par Steam : l'importer dans l'interface Steam Input de KSP, puis le partager
 (« Configurations de la communauté »). Le joueur n'a plus de fichier à copier.
 
