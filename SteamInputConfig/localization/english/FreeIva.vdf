@@ -1,6 +1,7 @@
 "ref"
 {
-    "FreeIva_backToSeat"				"Back to Seat"
+    "FreeIva_backToSeat"				"Back to Seat (FreeIVA)"
+    "FreeIva_buckle"					"Sit in Targeted Seat (FreeIVA)"
     "FreeIva_crouch"					"Crouch"
     "FreeIva_goToEVA"					"Go to EVA"
     "FreeIva_changeKerbal"				"Change Kerbal"

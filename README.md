@@ -12,10 +12,10 @@ The layouts are not edited in Steam's configuration screen but generated from sm
 in this repository: a behaviour shared by several sets is written once, and every change can be reviewed
 and reverted.
 
-**How this was made.** The layout and these fragments were written with Claude (Anthropic), then
-reviewed and validated by a human. I say it upfront because work done with an AI deserves a closer look,
-and because some will prefer to stop here. What deserves that look here is the layout itself: every
-binding is a plain key press, listed in the fragments under `SteamInputConfig/`.
+**How this was made.** The layout, these fragments and the page generator were written with Claude
+(Anthropic), then reviewed and validated by a human. I say it upfront because work done with an AI
+deserves a closer look, and because some will prefer to stop here. What deserves that look here is the
+layout itself: every binding is a plain key press, listed in the fragments under `SteamInputConfig/`.
 
 ## Using a layout
 
@@ -34,10 +34,11 @@ bindings send keys, and the keys KSP expects sit at different places on each key
 
 ## The layout
 
-**[See the layout, input by input and set by set](https://claude.ai/artifact/Ujeyfu9dcMrKzdZHCv54g6)**:
+**[See the layout, input by input and set by set](https://lhervier.github.io/KSP-Util-SteamInputConfig/)**:
 an interactive drawing of the controller showing what each input does on a press, a long press and with
-the R5 paddle held. The same page in French, the working copy with the points still being checked, is
-[here](https://claude.ai/artifact/LinLom7CUPZ83rWt8NwNnW).
+the R5 paddle held. The same page in French, built from the French layout, is
+[here](https://lhervier.github.io/KSP-Util-SteamInputConfig/fr.html). Both are generated from the layouts
+of this repository each time `main` changes.
 
 In short, the back paddles carry the keyboard modifiers:
 
@@ -62,6 +63,17 @@ build.bat      (Windows)
 ```
 
 The layouts are written to `Release/`, one file per keyboard language.
+
+The pages that show the layout are generated from these files by `PageGenerator/`, a separate tool that
+reads one built layout (`.vdf`) and writes one HTML page:
+
+```
+build-pages.bat      (Windows)
+./build-pages.sh     (Linux)
+```
+
+They are written to `Release/pages/`. On GitHub, the `Pages` workflow (`.github/workflows/pages.yml`)
+runs both builds and publishes these pages to GitHub Pages each time `main` changes.
 
 ## Known issues
 

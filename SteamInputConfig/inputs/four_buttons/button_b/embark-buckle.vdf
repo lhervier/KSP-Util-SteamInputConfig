@@ -8,6 +8,10 @@
             {
                 "#ref"				"/bindings/Kerbals/CharacterControls/embark.vdf"
             }
+            "Long_Press"
+            {
+                "#ref"				"/bindings/FreeIva/buckle.vdf"
+            }
         }
     }
 }

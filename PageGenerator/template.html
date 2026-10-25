@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="%%LANG%%">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>%%TITLE%%</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a mission-control board. Controller drawing in the middle (sticky), the inputs of each
+   hand in a column on its side, back paddles underneath. Three layers, each with its own colour. */
+:root {
+  --bg: #e9edf1;
+  --panel: #f8fafb;
+  --ink: #18212b;
+  --muted: #5d6b79;
+  --line: #c9d2db;
+  --shell: #cfd7df;
+  --shell-edge: #9aa7b4;
+  --part: #4a5866;
+  --part-ink: #f1f4f7;
+  --hot: #e0742b;
+  --n: #1d6fb8;
+  --l: #b06e12;
+  --s: #8a3aa6;
+  --n-bg: #e3eef8;
+  --l-bg: #f6ecdc;
+  --s-bg: #f1e5f6;
+  --font-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-key: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141a20; --panel: #1c242c; --ink: #e6ecf1; --muted: #93a2b0; --line: #2f3a45;
+    --shell: #2a343e; --shell-edge: #4a5866; --part: #7d8d9c; --part-ink: #10161b; --hot: #f08a45;
+    --n: #6fb0ec; --l: #e0a54a; --s: #c98ae0; --n-bg: #1b2d3e; --l-bg: #33281a; --s-bg: #2d2136;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141a20; --panel: #1c242c; --ink: #e6ecf1; --muted: #93a2b0; --line: #2f3a45;
+  --shell: #2a343e; --shell-edge: #4a5866; --part: #7d8d9c; --part-ink: #10161b; --hot: #f08a45;
+  --n: #6fb0ec; --l: #e0a54a; --s: #c98ae0; --n-bg: #1b2d3e; --l-bg: #33281a; --s-bg: #2d2136;
+  color-scheme: dark;
+}
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 14px;
+  line-height: 1.4;
+}
+a { color: var(--n); }
+.wrap {
+  max-width: 1360px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
+h1 {
+  font-family: var(--font-display); font-weight: 700; font-size: 2.1rem; letter-spacing: .01em;
+  margin: 0; line-height: 1; text-wrap: balance;
+}
+.sub { color: var(--muted); margin: 4px 0 0; max-width: 72ch; }
+.meta { color: var(--muted); margin: 6px 0 0; font-size: .8rem; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.meta code { font-family: var(--font-key); font-size: .78rem; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tab {
+  font: 600 1.05rem/1 var(--font-display); letter-spacing: .03em; text-transform: uppercase;
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+  padding: 8px 14px; border-radius: 6px; cursor: pointer;
+}
+.tab[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tab:focus-visible, .lay:focus-visible { outline: 2px solid var(--hot); outline-offset: 2px; }
+.setbar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: 10px;
+}
+.setinfo { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; min-width: 0; }
+.setinfo code { font-family: var(--font-key); font-size: .82rem; color: var(--muted); }
+.setinfo .ctx { color: var(--muted); }
+.layers { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.layers span.lbl { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-right: 4px; }
+.lay {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+  border-radius: 999px; padding: 5px 11px; font: 500 .85rem var(--font-body);
+}
+.lay[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.mk { width: 18px; height: 18px; flex: none; border-radius: 4px; display: inline-grid; place-items: center;
+  font: 700 .72rem/1 var(--font-key); color: var(--panel); }
+.mk.n { background: var(--n); }
+.mk.l { background: var(--l); }
+.mk.s { background: var(--s); }
+
+.board {
+  display: grid; gap: 16px 18px; align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 540px) minmax(0, 1fr);
+  grid-template-areas: "left ctrl right";
+}
+.col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.col.left { grid-area: left; }
+.col.right { grid-area: right; }
+.ctrl { grid-area: ctrl; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); display: flex; flex-direction: column; gap: 6px; }
+.ctrl svg { width: 100%; height: auto; display: block; }
+.cap { font-size: .78rem; color: var(--muted); text-align: center; margin: 0; }
+.backrow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.backtitle { font: 600 1rem var(--font-display); text-transform: uppercase; letter-spacing: .05em; margin: 4px 0 8px; color: var(--muted); }
+
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  padding: 8px 10px; display: flex; flex-direction: column; gap: 5px; min-width: 0;
+  transition: border-color .12s;
+}
+.card.hot { border-color: var(--hot); box-shadow: 0 0 0 1px var(--hot); }
+.card h3 {
+  margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px;
+  font: 600 1rem/1.1 var(--font-display); letter-spacing: .03em; text-transform: uppercase;
+}
+.card h3 .ctag { font: 500 .72rem var(--font-body); text-transform: none; letter-spacing: 0; color: var(--muted); }
+.card h3 .diff {
+  margin-left: auto; font: 500 .7rem var(--font-body); text-transform: none; letter-spacing: 0;
+  color: var(--hot); border: 1px solid var(--hot); border-radius: 999px; padding: 1px 7px;
+}
+.row { display: grid; grid-template-columns: 18px auto minmax(0, 1fr); gap: 7px; align-items: start; }
+kbd {
+  font: 500 .8rem/1.35 var(--font-key); padding: 0 6px; border-radius: 4px; white-space: nowrap;
+  border: 1px solid var(--line); background: var(--bg);
+}
+.row.n kbd { background: var(--n-bg); }
+.row.l kbd { background: var(--l-bg); }
+.row.s kbd { background: var(--s-bg); }
+.row .what { color: var(--ink); font-size: .86rem; }
+.row .what .dir { font-family: var(--font-key); color: var(--muted); margin-right: 4px; }
+.row .what em { font-style: normal; color: var(--muted); }
+.items { grid-column: 2 / -1; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 3px 10px; font-size: .8rem; }
+.items span { display: flex; gap: 6px; align-items: baseline; min-width: 0; }
+.empty { color: var(--muted); font-size: .85rem; }
+.card.shift { background: var(--s-bg); border-color: var(--s); }
+
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.note { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; min-width: 0; }
+.note h2 { margin: 0 0 8px; font: 600 1.1rem var(--font-display); text-transform: uppercase; letter-spacing: .04em; }
+.note ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+
+/* SVG parts */
+.shell { fill: var(--shell); stroke: var(--shell-edge); stroke-width: 2; }
+.well { fill: var(--bg); stroke: var(--shell-edge); stroke-width: 1.5; }
+.part { fill: var(--part); stroke: none; cursor: pointer; transition: fill .12s; }
+.part.hot { fill: var(--hot); }
+.part.paddle-shift { fill: var(--s); }
+.part.paddle-shift.hot { fill: var(--hot); }
+.glyph { fill: var(--part-ink); font: 700 11px var(--font-display); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.tag { fill: var(--muted); font: 600 11px var(--font-display); text-anchor: middle; letter-spacing: .05em; pointer-events: none; }
+
+@media (max-width: 1100px) {
+  .board { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "ctrl ctrl" "left right"; }
+  .ctrl { position: static; max-width: 560px; margin: 0 auto; width: 100%; }
+}
+@media (max-width: 640px) {
+  .board { grid-template-columns: minmax(0, 1fr); grid-template-areas: "ctrl" "left" "right"; }
+  .backrow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  h1 { font-size: 1.7rem; }
+}
+@media (prefers-reduced-motion: reduce) { .part, .card { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>%%H1%%</h1>
+      <p class="sub">%%SUB%%</p>
+      <p class="meta"><span>%%GENERATED%% <code>%%LAYOUT_TITLE%%</code></span><a href="%%OTHER_HREF%%">%%OTHER_LABEL%%</a></p>
+    </div>
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+  </header>
+
+  <div class="setbar">
+    <div class="setinfo"><strong id="setName"></strong><code id="setSteam"></code><span class="ctx" id="setCtx"></span></div>
+    <div class="layers" id="layers"></div>
+  </div>
+
+  <section class="board">
+    <div class="col left" id="colLeft"></div>
+
+    <div class="ctrl">
+      <svg viewBox="0 0 600 330" role="img" aria-label="Steam Controller">
+        <path class="shell" d="M150,50 C200,34 400,34 450,50 L520,70 C562,86 582,122 586,170 C593,240 576,302 530,312 C494,320 470,292 455,256 C445,233 425,236 400,236 L200,236 C175,236 155,233 145,256 C130,292 106,320 70,312 C24,302 7,240 14,170 C18,122 38,86 80,70 Z"/>
+        <rect class="part" data-input="lt" x="100" y="8" width="86" height="22" rx="9"/><text class="glyph" x="143" y="19">LT</text>
+        <rect class="part" data-input="rt" x="414" y="8" width="86" height="22" rx="9"/><text class="glyph" x="457" y="19">RT</text>
+        <rect class="part" data-input="lb" x="88" y="36" width="112" height="15" rx="7"/><text class="glyph" x="144" y="44">LB</text>
+        <rect class="part" data-input="rb" x="400" y="36" width="112" height="15" rx="7"/><text class="glyph" x="456" y="44">RB</text>
+
+        <rect class="well" x="78" y="88" width="64" height="64" rx="14"/>
+        <rect class="part" data-input="dup" x="100" y="92" width="20" height="21" rx="3"/>
+        <rect class="part" data-input="ddown" x="100" y="127" width="20" height="21" rx="3"/>
+        <rect class="part" data-input="dleft" x="82" y="110" width="21" height="20" rx="3"/>
+        <rect class="part" data-input="dright" x="117" y="110" width="21" height="20" rx="3"/>
+        <rect x="102" y="112" width="16" height="16" fill="var(--part)"/>
+
+        <circle class="well" cx="210" cy="108" r="32"/>
+        <circle class="part" data-input="ls" cx="210" cy="108" r="21"/>
+        <circle class="part" data-input="l3" cx="210" cy="108" r="7" style="fill: var(--shell-edge)"/>
+        <rect class="part" data-input="lp lpc" x="166" y="158" width="78" height="70" rx="14"/>
+        <text class="glyph" x="205" y="193">L PAD</text>
+
+        <circle class="well" cx="390" cy="108" r="32"/>
+        <circle class="part" data-input="rs" cx="390" cy="108" r="21"/>
+        <circle class="part" data-input="r3" cx="390" cy="108" r="7" style="fill: var(--shell-edge)"/>
+        <rect class="part" data-input="rp rpc" x="356" y="158" width="78" height="70" rx="14"/>
+        <text class="glyph" x="395" y="193">R PAD</text>
+
+        <circle class="part" data-input="y" cx="490" cy="92" r="12"/><text class="glyph" x="490" y="92">Y</text>
+        <circle class="part" data-input="x" cx="466" cy="116" r="12"/><text class="glyph" x="466" y="116">X</text>
+        <circle class="part" data-input="b" cx="514" cy="116" r="12"/><text class="glyph" x="514" y="116">B</text>
+        <circle class="part" data-input="a" cx="490" cy="140" r="12"/><text class="glyph" x="490" y="140">A</text>
+
+        <rect class="part" data-input="view" x="256" y="70" width="24" height="15" rx="7"/><text class="tag" x="268" y="64">⧉</text>
+        <circle cx="300" cy="98" r="11" fill="var(--shell-edge)"/><text class="tag" x="300" y="122">STEAM</text>
+        <rect class="part" data-input="menu" x="320" y="70" width="24" height="15" rx="7"/><text class="tag" x="332" y="64">☰</text>
+      </svg>
+      <svg viewBox="0 190 600 135" role="img" aria-label="Back paddles">
+        <path class="shell" d="M150,50 C200,34 400,34 450,50 L520,70 C562,86 582,122 586,170 C593,240 576,302 530,312 C494,320 470,292 455,256 C445,233 425,236 400,236 L200,236 C175,236 155,233 145,256 C130,292 106,320 70,312 C24,302 7,240 14,170 C18,122 38,86 80,70 Z" opacity=".55"/>
+        <rect class="part" data-input="l4" x="40" y="214" width="62" height="18" rx="9"/><text class="glyph" x="71" y="223">L4</text>
+        <rect class="part" data-input="l5" x="48" y="252" width="62" height="18" rx="9"/><text class="glyph" x="79" y="261">L5</text>
+        <rect class="part" data-input="r4" x="498" y="214" width="62" height="18" rx="9"/><text class="glyph" x="529" y="223">R4</text>
+        <rect class="part" data-input="r5" x="490" y="252" width="62" height="18" rx="9"/><text class="glyph" x="521" y="261">R5</text>
+      </svg>
+      <p class="cap" id="backCaption"></p>
+    </div>
+
+    <div class="col right" id="colRight"></div>
+  </section>
+
+  <section>
+    <p class="backtitle" id="backTitle"></p>
+    <div class="backrow" id="backRow"></div>
+  </section>
+
+  <section class="notes" id="notes"></section>
+</div>
+
+<script>
+// Generated by PageGenerator: the layout read from the .vdf, and the page's texts.
+const LAYOUT = /*%%LAYOUT%%*/null;
+const T = /*%%STRINGS%%*/null;
+
+// Inputs, in the order they appear in each column (top to bottom on the controller).
+const INPUTS = {
+  left: ["lt", "lb", "dup", "dleft", "dright", "ddown", "view", "ls", "l3", "lp", "lpc"],
+  right: ["rt", "rb", "y", "x", "b", "a", "menu", "rs", "r3", "rp", "rpc"],
+  back: ["l4", "l5", "r4", "r5"]
+};
+// Tab order; sets the page does not know come after.
+const ORDER = ["FlightControls", "DockingControls", "MapControls", "EVAControls", "EditorControls", "MenuControls"];
+const REFERENCE = "FlightControls";
+const MARKS = { n: "●", l: "◷", s: "⇧" };
+
+const SETS = [...LAYOUT.sets].sort((a, b) => rank(a.name) - rank(b.name));
+const ref = SETS.find(s => s.name === REFERENCE);
+let current = SETS[0];
+let layerFilter = "all";
+
+function rank(name) {
+  const i = ORDER.indexOf(name);
+  return i < 0 ? ORDER.length : i;
+}
+
+function slug(set) {
+  return set.name.replace(/Controls$/, "").toLowerCase();
+}
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+
+function keyText(row) {
+  if (row.mouse) return T.mouse[row.mouse] || row.mouse;
+  return row.keys.map(k => T.keys[k] || k).join(" + ");
+}
+
+function tagText(tag) {
+  if (tag.startsWith("chord:")) return T.tags.chord.replace("{button}", tag.slice(6));
+  return T.tags[tag] || tag;
+}
+
+// The rows of a card shown in the current layer filter, with list and touch menu items folded into
+// one row each.
+function visibleRows(card) {
+  const out = [];
+  for (const row of card.rows) {
+    if (layerFilter !== "all" && layerFilter !== row.layer) continue;
+    const list = row.tags.find(t => t === "list" || t === "touchmenu");
+    const last = out[out.length - 1];
+    if (list && last && last.list === list && last.layer === row.layer) {
+      last.items.push(row);
+    } else if (list) {
+      out.push({ layer: row.layer, list, items: [row] });
+    } else {
+      out.push(row);
+    }
+  }
+  return out;
+}
+
+function renderRow(row) {
+  const r = el("div", "row " + row.layer);
+  r.appendChild(el("span", "mk " + row.layer, MARKS[row.layer]));
+  if (row.shift) {
+    r.append(el("kbd", null, T.hold),
+      el("span", "what", T.shiftTo + " " + row.shiftZones.map(z => T.zones[z] || z).join(", ")));
+    return r;
+  }
+  if (row.list) {
+    r.append(el("kbd", null, tagText(row.list)), el("span"));
+    const items = el("div", "items");
+    for (const item of row.items) {
+      const s = el("span");
+      s.append(el("kbd", null, keyText(item)), document.createTextNode(item.label));
+      items.appendChild(s);
+    }
+    r.appendChild(items);
+    return r;
+  }
+  r.appendChild(el("kbd", null, keyText(row)));
+  const what = el("span", "what");
+  if (row.sub) what.appendChild(el("span", "dir", row.sub));
+  what.appendChild(document.createTextNode(row.label));
+  const tags = row.tags.filter(t => t !== "list" && t !== "touchmenu");
+  if (tags.length) what.appendChild(el("em", null, (row.label ? " · " : "") + tags.map(tagText).join(", ")));
+  r.appendChild(what);
+  return r;
+}
+
+function renderCard(id, card, refCard) {
+  const box = el("article", "card");
+  box.dataset.input = id;
+  const h = el("h3", null, T.inputs[id] || id);
+  if (card && card.tags.length) h.appendChild(el("span", "ctag", card.tags.map(tagText).join(", ")));
+  if (ref && current !== ref && JSON.stringify(card || null) !== JSON.stringify(refCard || null)) {
+    h.appendChild(el("span", "diff", T.diffFrom.replace("{set}", ref.title)));
+  }
+  box.appendChild(h);
+  if (card && card.rows.some(r => r.shift)) box.classList.add("shift");
+  const rows = card ? visibleRows(card) : [];
+  rows.forEach(r => box.appendChild(renderRow(r)));
+  if (!rows.length) box.appendChild(el("span", "empty", card && card.rows.length ? "—" : T.free));
+  return box;
+}
+
+function render() {
+  document.getElementById("setName").textContent = current.title;
+  document.getElementById("setSteam").textContent = current.name;
+  document.getElementById("setCtx").textContent = T.contexts[current.name] || "";
+  const targets = { left: "colLeft", right: "colRight", back: "backRow" };
+  for (const [side, list] of Object.entries(INPUTS)) {
+    const box = document.getElementById(targets[side]);
+    box.replaceChildren(...list.map(id => renderCard(id, current.cards[id], ref && ref.cards[id])));
+  }
+  document.querySelectorAll(".part").forEach(p => {
+    const shift = p.dataset.input.split(" ").some(id => {
+      const card = current.cards[id];
+      return card && card.rows.some(r => r.shift);
+    });
+    p.classList.toggle("paddle-shift", shift);
+  });
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", String(t.dataset.set === current.name)));
+}
+
+function setHot(id, on) {
+  document.querySelectorAll(".part").forEach(p => {
+    if (p.dataset.input.split(" ").includes(id)) p.classList.toggle("hot", on);
+  });
+  document.querySelectorAll(`.card[data-input="${id}"]`).forEach(c => c.classList.toggle("hot", on));
+}
+
+document.addEventListener("mouseover", e => {
+  const c = e.target.closest(".card, .part");
+  if (c) c.dataset.input.split(" ").forEach(id => setHot(id, true));
+});
+document.addEventListener("mouseout", e => {
+  const c = e.target.closest(".card, .part");
+  if (c) c.dataset.input.split(" ").forEach(id => setHot(id, false));
+});
+
+// Static texts
+document.getElementById("backCaption").textContent = T.backCaption;
+document.getElementById("backTitle").textContent = T.backPaddles;
+const notes = document.getElementById("notes");
+for (const note of T.notes) {
+  const box = el("div", "note");
+  box.appendChild(el("h2", null, note.title));
+  const ul = el("ul");
+  // The notes are the page's own texts (strings.js), not data from the .vdf: their markup is trusted.
+  for (const item of note.items) {
+    const li = el("li");
+    li.innerHTML = item;
+    ul.appendChild(li);
+  }
+  box.appendChild(ul);
+  notes.appendChild(box);
+}
+
+const layers = document.getElementById("layers");
+layers.appendChild(el("span", "lbl", T.layers));
+for (const [key, label] of [["all", T.all], ["n", T.press], ["l", T.long], ["s", T.shiftHeld]]) {
+  const b = el("button", "lay");
+  b.type = "button";
+  b.dataset.layer = key;
+  b.setAttribute("aria-pressed", String(key === "all"));
+  if (MARKS[key]) b.appendChild(el("span", "mk " + key, MARKS[key]));
+  b.appendChild(document.createTextNode(label));
+  b.addEventListener("click", () => {
+    layerFilter = key;
+    layers.querySelectorAll(".lay").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    render();
+  });
+  layers.appendChild(b);
+}
+
+const tabs = document.getElementById("tabs");
+for (const s of SETS) {
+  const t = el("button", "tab", s.title);
+  t.type = "button"; t.dataset.set = s.name; t.setAttribute("role", "tab");
+  t.addEventListener("click", () => { current = s; history.replaceState(null, "", "#" + slug(s)); render(); });
+  tabs.appendChild(t);
+}
+
+const fromHash = SETS.find(s => "#" + slug(s) === location.hash);
+if (fromHash) current = fromHash;
+render();
+</script>
+</body>
+</html>

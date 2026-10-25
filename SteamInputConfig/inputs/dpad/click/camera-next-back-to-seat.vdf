@@ -1,0 +1,17 @@
+"ref"
+{
+    "click"
+    {
+        "activators"
+        {
+            "Full_Press"
+            {
+                "#ref"				"/bindings/Game/Camera/next-camera.vdf"
+            }
+            "Long_Press"
+            {
+                "#ref"				"/bindings/FreeIva/back-to-seat.vdf"
+            }
+        }
+    }
+}

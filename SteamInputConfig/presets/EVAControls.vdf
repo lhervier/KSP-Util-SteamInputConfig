@@ -5,7 +5,7 @@
 		"name"		"EVAControls"
 		"group_source_bindings"
 		{
-			"/groups/right_joystick/camera.vdf"		"right_joystick active"
+			"/groups/right_joystick/camera-eva.vdf"		"right_joystick active"
 			"/groups/right_trackpad/mouse-flight.vdf"		"right_trackpad active"
 			"/groups/joystick/eva-move.vdf"		"joystick active"
 			"/groups/joystick/editor/place-offset-rotate.vdf"		"joystick active modeshift"

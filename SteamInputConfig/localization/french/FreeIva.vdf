@@ -1,6 +1,7 @@
 "ref"
 {
-    "FreeIva_backToSeat"				"S'assoir dans le siège"
+    "FreeIva_backToSeat"				"Retour au siège (FreeIVA)"
+    "FreeIva_buckle"					"S'asseoir dans le siège visé (FreeIVA)"
     "FreeIva_crouch"					"S'accroupir"
     "FreeIva_goToEVA"					"Partir en EVA"
     "FreeIva_changeKerbal"				"Changer de Kerbal"

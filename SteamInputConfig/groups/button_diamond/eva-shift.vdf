@@ -7,7 +7,7 @@
 		"description"		""
 		"inputs"
 		{
-			"#ref"				"/inputs/four_buttons/button_b/embark.vdf"
+			"#ref"				"/inputs/four_buttons/button_b/embark-buckle.vdf"
 			"#ref"				"/inputs/four_buttons/button_x/parachute.vdf"
 			"#ref"				"/inputs/four_buttons/button_y/helmet.vdf"
 		}
