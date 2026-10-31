@@ -88,7 +88,7 @@ function parseBinding(text) {
  *
  * @param {string} text the .vdf content
  * @param {object} [keyboard] the keyboard table the layout was built with ({ "M": "SEMICOLON" }):
- *        keys are shown as the game names them, not as Steam sends them
+ *        keys are shown as the keyboard types them (what the game reads), not as Steam sends them
  * @returns {object} { title, controllerType, sets: [{ name, title, cards: { id: card } }] }, where a card
  *          is { rows: [{ layer, sub, keys, mouse, label, tags, shiftZones }], tags: [] }
  * @throws {Error} when an input of the layout has no place on the page

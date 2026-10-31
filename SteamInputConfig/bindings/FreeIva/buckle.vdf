@@ -2,6 +2,6 @@
 {
     "bindings"
     {
-        "binding"		"key_press {{key 'Y'}}, #FreeIva_buckle, , "
+        "binding"		"key_press {{char 'Y'}}, #FreeIva_buckle, , "
     }
 }

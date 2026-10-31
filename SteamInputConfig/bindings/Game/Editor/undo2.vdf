@@ -2,6 +2,6 @@
 {
     "bindings"
     {
-        "binding"		"key_press {{key 'Z'}}, #Game_Editor_undo, , "
+        "binding"		"key_press {{char 'Z'}}, #Game_Editor_undo, , "
     }
 }

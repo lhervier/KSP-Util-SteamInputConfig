@@ -22,8 +22,8 @@
     "Game_Editor_placementMode"				"Mode placement"
 	"Game_Editor_redo"						"Rétablir"
     "Game_Editor_resetPartRotation"			"Réinit. rotation de la pièce"
-    "Game_Editor_rollPartLeft"				"Lacet de la pièce vers la gauche"
-    "Game_Editor_rollPartRight"				"Lacet de la pièce vers la droite"
+    "Game_Editor_rollPartLeft"				"Roulis de la pièce à gauche"
+    "Game_Editor_rollPartRight"				"Roulis de la pièce à droite"
     "Game_Editor_rootMode"					"Mode racine"
     "Game_Editor_rotateMode"				"Mode rotation"
     "Game_Editor_snapToggle"				"Act./Désact. mode attach."
@@ -32,8 +32,8 @@
     "Game_Editor_translateCameraDown"		"Translation caméra bas"
     "Game_Editor_translateCameraUp"			"Translation caméra haut"
     "Game_Editor_undo"						"Annuler"
-    "Game_Editor_yawPartLeft"				"Roulis de la pièce à gauche"
-    "Game_Editor_yawPartRight"				"Roulis de la pièce à droite"
+    "Game_Editor_yawPartLeft"				"Lacet de la pièce vers la gauche"
+    "Game_Editor_yawPartRight"				"Lacet de la pièce vers la droite"
     
     {{! General }}
     "Game_General_timeWarpDecr"	            "Réduire l'avance rapide"

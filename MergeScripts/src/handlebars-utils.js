@@ -63,9 +63,12 @@ Handlebars.registerHelper('layerPos', function (name) {
 });
 
 /**
- * Get a value from the keyboard context
- * @param {string} key - The key to get
- * @returns {string} The value of the key
+ * A physical key, named after its position on a QWERTY keyboard: {{key 'W'}}.
+ * For the game bindings KSP moves with the keyboard layout (its Azerty.cfg puts pitch on Z,
+ * at the place of the QWERTY W), so the key is the same on every keyboard.
+ * @param {string} key - The QWERTY name of the key, as listed in the keyboard table
+ * @returns {string} The key Steam must send
+ * @throws {Error} when the key is not in the keyboard table
  */
 Handlebars.registerHelper('key', function (key) {
     if( !this.keyboard ) {
@@ -74,7 +77,26 @@ Handlebars.registerHelper('key', function (key) {
     if( !this.keyboard[key] ) {
         throw new Error(`key helper: key ${key} is missing in keyboard context`);
     }
-    return this.keyboard[key];
+    // Steam Input sends key positions (on Windows): no translation
+    return key;
+});
+
+/**
+ * The key that types a character on the keyboard of the build: {{char 'Z'}}.
+ * For the shortcuts KSP reads as a letter whatever the layout (editor undo Ctrl+Z,
+ * map view M).
+ * @param {string} character - The character, named as in the keyboard table
+ * @returns {string} The key Steam must send (W for Z on a French keyboard)
+ * @throws {Error} when the character is not in the keyboard table
+ */
+Handlebars.registerHelper('char', function (character) {
+    if( !this.keyboard ) {
+        throw new Error('char helper: keyboard context is missing');
+    }
+    if( !this.keyboard[character] ) {
+        throw new Error(`char helper: character ${character} is missing in keyboard context`);
+    }
+    return this.keyboard[character];
 });
 
 /**

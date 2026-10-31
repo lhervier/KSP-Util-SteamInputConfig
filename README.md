@@ -77,8 +77,18 @@ runs both builds and publishes these pages to GitHub Pages each time `main` chan
 
 ## Known issues
 
-On Linux, keyboard layouts other than US English may send wrong keys; see
-[this report](https://github.com/ValveSoftware/steam-for-linux/issues/13220).
+**Linux with a keyboard layout other than US English.** On Windows, Steam Input sends the key at the
+place of the bound QWERTY key, whatever the keyboard; picking the layout of your keyboard language is
+enough. On Linux, it does so only for some keys: for the letters A, Q, W, Z and M it sends the
+character instead, and several punctuation keys (`[`, `]`, `` ` ``, `\`, `'`, `;`, `.`, `/`, `-`, keypad
+`.`) all come out as the same key, or as nothing. With an AZERTY keyboard, for instance, these bindings
+reach the game as other keys:
+
+- pitch, yaw and roll (W, A, Q), full throttle (Z), the map view (M), undo in the editor (Ctrl + Z);
+- time warp and stopping it, switching vessels, the navball, resetting the camera.
+
+No layout can fix the punctuation keys from Steam's side. I reported it to Valve:
+[ValveSoftware/steam-for-linux#13220](https://github.com/ValveSoftware/steam-for-linux/issues/13220).
 
 ## License
 

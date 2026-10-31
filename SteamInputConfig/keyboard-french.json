@@ -44,8 +44,8 @@
     "0":                 "0",
     "BACKSPACE":         "BACKSPACE",
         
-    "Q":                 "Q",
-    "W":                 "W",
+    "Q":                 "A",
+    "W":                 "Z",
     "E":                 "E",
     "R":                 "R",
     "T":                 "T",
@@ -59,7 +59,7 @@
     "BACKSLASH":         "BACKSLASH",
     "FORWARD_SLASH":     "FORWARD_SLASH",
 
-    "A":                 "A",
+    "A":                 "Q",
     "S":                 "S",
     "D":                 "D",
     "F":                 "F",
@@ -70,7 +70,7 @@
     "L":                 "L",
     "SINGLE_QUOTE":      "SINGLE_QUOTE",
     
-    "Z":                 "Z",
+    "Z":                 "W",
     "X":                 "X",
     "C":                 "C",
     "V":                 "V",
