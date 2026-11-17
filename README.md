@@ -75,7 +75,7 @@ build-pages.bat      (Windows)
 They are written to `Release/pages/`. On GitHub, the `Pages` workflow (`.github/workflows/pages.yml`)
 runs both builds and publishes these pages to GitHub Pages each time `main` changes.
 
-## Known issues
+## Work in progress
 
 **Linux with a keyboard layout other than US English.** On Windows, Steam Input sends the key at the
 place of the bound QWERTY key, whatever the keyboard; picking the layout of your keyboard language is
